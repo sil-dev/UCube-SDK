@@ -1,0 +1,79 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.sil.ucubesampleapplication"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.BLUETOOTH" />
+11-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:5-68
+11-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:11:22-65
+12    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+12-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:5-74
+12-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:12:22-71
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:5-67
+13-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:13:22-64
+14    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+14-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:5-79
+14-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:14:22-76
+15    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+15-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:5-78
+15-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:15:22-75
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE " />
+16-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:5-80
+16-->[:ucubesdk] C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\ucubesdk\build\intermediates\library_manifest\debug\AndroidManifest.xml:16:22-77
+17
+18    <application
+18-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:6:5-27:19
+19        android:allowBackup="true"
+19-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:7:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.1.0] C:\Users\SHIVAM\.gradle\caches\transforms-2\files-2.1\17f874c08416526ce5b0920ea28b4b17\core-1.1.0\AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:icon="@mipmap/ic_launcher"
+22-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:8:9-43
+23        android:label="@string/app_name"
+23-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:9:9-41
+24        android:networkSecurityConfig="@xml/network_security_config"
+24-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:10:9-69
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:11:9-54
+26        android:supportsRtl="true"
+26-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:12:9-35
+27        android:theme="@style/AppTheme"
+27-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:14:9-40
+28        android:usesCleartextTraffic="true" >
+28-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:13:9-44
+29        <uses-library
+29-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:16:9-18:40
+30            android:name="org.apache.http.legacy"
+30-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:17:13-50
+31            android:required="false" />
+31-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:18:13-37
+32
+33        <activity android:name="com.sil.ucubesampleapplication.MainActivity" />
+33-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:20:9-72
+33-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:20:19-70
+34        <activity android:name="com.sil.ucubesampleapplication.ScanActivity" >
+34-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:21:9-26:20
+34-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:21:19-70
+35            <intent-filter>
+35-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:22:13-25:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:23:17-69
+36-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:23:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:24:17-77
+38-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:24:27-74
+39            </intent-filter>
+40        </activity>
+41    </application>
+42
+43</manifest>
