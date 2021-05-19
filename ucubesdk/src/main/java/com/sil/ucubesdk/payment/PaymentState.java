@@ -30,5 +30,7 @@ public enum PaymentState {
 	CARD_BLOCKED,
 	TRAck_2_error,
 	SWIPE_CARD,
+	TAG_BATTERY_STATE,
+	TAG_POWER_OFF_TIMEOUT,
 	REVERSAL;
 }

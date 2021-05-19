@@ -46,34 +46,35 @@
 25-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:11:9-54
 26        android:supportsRtl="true"
 26-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:12:9-35
-27        android:theme="@style/AppTheme"
-27-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:14:9-40
-28        android:usesCleartextTraffic="true" >
-28-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:13:9-44
-29        <uses-library
-29-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:16:9-18:40
-30            android:name="org.apache.http.legacy"
-30-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:17:13-50
-31            android:required="false" />
-31-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:18:13-37
-32
-33        <activity android:name="com.sil.ucubesampleapplication.MainActivity" />
-33-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:20:9-72
-33-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:20:19-70
-34        <activity android:name="com.sil.ucubesampleapplication.ScanActivity" >
-34-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:21:9-26:20
-34-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:21:19-70
-35            <intent-filter>
-35-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:22:13-25:29
-36                <action android:name="android.intent.action.MAIN" />
-36-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:23:17-69
-36-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:23:25-66
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:24:17-77
-38-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:24:27-74
-39            </intent-filter>
-40        </activity>
-41    </application>
-42
-43</manifest>
+27        android:testOnly="true"
+28        android:theme="@style/AppTheme"
+28-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:14:9-40
+29        android:usesCleartextTraffic="true" >
+29-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:13:9-44
+30        <uses-library
+30-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:16:9-18:40
+31            android:name="org.apache.http.legacy"
+31-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:17:13-50
+32            android:required="false" />
+32-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:18:13-37
+33
+34        <activity android:name="com.sil.ucubesampleapplication.MainActivity" />
+34-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:20:9-72
+34-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:20:19-70
+35        <activity android:name="com.sil.ucubesampleapplication.ScanActivity" >
+35-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:21:9-26:20
+35-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:21:19-70
+36            <intent-filter>
+36-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:22:13-25:29
+37                <action android:name="android.intent.action.MAIN" />
+37-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:23:17-69
+37-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:23:25-66
+38
+39                <category android:name="android.intent.category.LAUNCHER" />
+39-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:24:17-77
+39-->C:\ANDROID_\4SQUARE\SIL\UCubeSampleApplication\app\src\main\AndroidManifest.xml:24:27-74
+40            </intent-filter>
+41        </activity>
+42    </application>
+43
+44</manifest>

@@ -2,10 +2,15 @@ package com.sil.ucubesdk;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.sil.ucubesdk.POJO.UCubeRequest;
@@ -73,6 +78,20 @@ public class UCubeManager {
 
     private UCubeManager(Context context) {
         this.context = context;
+    }
+
+    public boolean isBluetoothConnected(String bluetoothAddress) {
+        try {
+            if (bluetoothAddress == null) return false;
+            if (BluetoothConnexionManager.getInstance().canConnect(bluetoothAddress)) {
+                BluetoothConnexionManager.getInstance().disconnect();
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public void execute(UCubeRequest UCubeRequest, UCubeCallBacks uCubeCallBacks) {
@@ -498,6 +517,12 @@ public class UCubeManager {
                                         break;
                                     case REVERSAL:
                                         setResult(false, "REVERSAL", 107, MyConst.getJSONResponse(), uCubeCallBacks);
+                                        break;
+                                    case TAG_BATTERY_STATE:
+                                        setResult(false, "TAG_BATTERY_STATE", 110, MyConst.getJSONResponse(), uCubeCallBacks);
+                                        break;
+                                    case TAG_POWER_OFF_TIMEOUT:
+                                        setResult(false, "TAG_POWER_OFF_TIMEOUT", 111, MyConst.getJSONResponse(), uCubeCallBacks);
                                         break;
 
                                     default:

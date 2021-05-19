@@ -72,15 +72,11 @@ public class BluetoothConnexionManager extends BroadcastReceiver implements ICon
             socket = (BluetoothSocket) m.invoke(device, Integer.valueOf(1));
 
             if (socket != null) {
-
                 socket.connect();
                 RPCManager.getInstance().start(socket.getInputStream(), socket.getOutputStream());
                 return true;
             }
-
-
             return false;
-
         } catch (Exception e) {
             LogManager.debug(BluetoothConnexionManager.class.getName(), "connect device error", e);
             if (uCubeCallBacks != null) {
@@ -105,14 +101,72 @@ public class BluetoothConnexionManager extends BroadcastReceiver implements ICon
         }
     }
 
-    public void disconnect() {
+    public boolean canConnect(String deviceAddr) {
+        if (deviceAddr == null) {
+            return false;
+        }
+
+        try {
+            LogManager.debug(BluetoothConnexionManager.class.getSimpleName(), "connect to " + deviceAddr);
+
+            if (socket == null) {
+                BluetoothDevice device = BluetoothAdapter.getDefaultAdapter().getRemoteDevice(deviceAddr);
+
+                //socket = device.createRfcommSocketToServiceRecord(BT_UUID);
+                Method m = device.getClass().getMethod("createInsecureRfcommSocket", new Class[]{int.class});
+                socket = (BluetoothSocket) m.invoke(device, Integer.valueOf(1));
+
+            }
+
+            if (socket != null && socket.isConnected()) {
+                try {
+                    socket.close();
+                } catch (IOException ignored) {
+                    return false;
+                }
+            }
+
+            if (socket != null) {
+                socket.connect();
+                //RPCManager.getInstance().start(socket.getInputStream(), socket.getOutputStream());
+                return true;
+            }
+            return false;
+        } catch (Exception e) {
+            LogManager.debug(BluetoothConnexionManager.class.getName(), "connect device error", e);
+            if (uCubeCallBacks != null) {
+                try {
+                    BluetoothAdapter adapter = BluetoothAdapter.getDefaultAdapter();
+
+                    if (!adapter.isEnabled()) {
+                        MyConst.setJSONResponse(getJSONObject("CONNECTION ERROR", 102, "Bluetooth Disconnected."));
+                    }
+                } catch (Exception excep) {
+                    excep.printStackTrace();
+                }
+            }
+            if (socket != null && socket.isConnected()) {
+                try {
+                    socket.close();
+                } catch (IOException ignored) {
+                }
+            }
+
+            return false;
+        }
+    }
+
+    public boolean disconnect() {
         if (socket != null && socket.isConnected()) {
             try {
                 socket.close();
-                // socket = null;
+                socket = null;
+                return true;
             } catch (IOException ignored) {
+                return false;
             }
         }
+        return false;
     }
 
     public boolean isInitialized() {

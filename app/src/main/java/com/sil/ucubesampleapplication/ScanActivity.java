@@ -86,6 +86,16 @@ public class ScanActivity extends AppCompatActivity {
         localBuilder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                if (findDeviceByMacAddress(bluetoothDevice.getAddress()) == null) {
+                    Log.e(TAG, "onClick: NULL");
+                } else {
+                    Log.e(TAG, "onClick: NOT_NULL");
+                    BluetoothDevice bd = findDeviceByMacAddress(bluetoothDevice.getAddress());
+                    Log.e(TAG, "onClick: getBondState : " + bd.getBondState());
+                    Log.e(TAG, "onClick: getAddress : " + bd.getAddress());
+                    Log.e(TAG, "onClick: getType : " + bd.getType());
+                    Log.e(TAG, "onClick: getUuids : " + bd.getUuids());
+                }
                 openNextActivity(bluetoothDevice);
             }
         });
@@ -96,6 +106,36 @@ public class ScanActivity extends AppCompatActivity {
             }
         });
         localBuilder.show();
+    }
+
+    /**
+     * Helper method that finds a device given its mac address.
+     *
+     * @param macAddress the mac address of the device.
+     * @return a {@code BluetoothDevice} object if it was found. Returns null otherwise.
+     */
+    public BluetoothDevice findDeviceByMacAddress(String macAddress) {
+        for (BluetoothDevice device : getPairedDevices()) {
+            if (device.getAddress().equalsIgnoreCase(macAddress)) {
+                return device;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Returns all the paired devices on this device.
+     *
+     * @return an ArrayList of the paired devices.
+     */
+    public ArrayList<BluetoothDevice> getPairedDevices() {
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        ArrayList<BluetoothDevice> devices = new ArrayList<BluetoothDevice>();
+        Set<BluetoothDevice> bonds = bluetoothAdapter.getBondedDevices();
+        for (BluetoothDevice device : bonds) {
+            devices.add(device);
+        }
+        return devices;
     }
 
     private void openNextActivity(BluetoothDevice bluetoothDevice) {
@@ -150,5 +190,6 @@ public class ScanActivity extends AppCompatActivity {
     private void showToast(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
+
 
 }

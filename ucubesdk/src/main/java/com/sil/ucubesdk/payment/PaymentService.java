@@ -172,6 +172,12 @@ public class PaymentService extends AbstractPaymentService {
                                     } else if (cmd.getResponseStatus().shortValue() == Constants.STATUS_CARD_NOT_ACCEPTED) {
                                         MyConst.setResponseStatus(cmd.getResponseStatus().shortValue());
                                         end(PaymentState.UNSUPPORTED_CARD);
+                                    } else if (cmd.getResponseStatus().shortValue() == Constants.TAG_BATTERY_STATE) {
+                                        MyConst.setResponseStatus(cmd.getResponseStatus().shortValue());
+                                        end(PaymentState.TAG_BATTERY_STATE);
+                                    } else if (cmd.getResponseStatus().shortValue() == Constants.TAG_POWER_OFF_TIMEOUT) {
+                                        MyConst.setResponseStatus(cmd.getResponseStatus().shortValue());
+                                        end(PaymentState.TAG_POWER_OFF_TIMEOUT);
                                     } else {
                                         end(PaymentState.CARD_WAIT_FAILED);
                                     }

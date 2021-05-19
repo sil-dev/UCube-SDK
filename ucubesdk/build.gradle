@@ -11,7 +11,7 @@ ext {
     // Group ID of the SDK which will be added in implementation line of gradle
     artifact = 'ucubesdk'
     // Artifact ID of the SDK which will be added in implementation line of gradle
-    libraryVersion = '2.0.21'
+    libraryVersion = '2.0.23'
     // Version of the library you created in Bintray //2.0.17 source code not available. based on 2.0.16
 
     libraryName = 'ucubesdk' // It is generally the module name
